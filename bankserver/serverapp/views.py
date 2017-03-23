@@ -70,8 +70,7 @@ def bank_transaction(request):
                 for key, value in data.items():
                     key1 = transactionhash.decrypt(key, "fakher")
                     value1 = transactionhash.decrypt(value, "fakher")
-                    data.append({key1: value1})
-            data.append({'valid' : True})
+            data = [{'valid' : True}]
             print "Transaction Sent"
         else:
             data = [{'valid' : "Transaction not sent"}]
