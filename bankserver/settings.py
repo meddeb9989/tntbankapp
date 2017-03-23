@@ -31,7 +31,7 @@ CSRF_COOKIE_SECURE = False
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [u'tntwebserver.herokuapp.com', u'127.0.0.1', u'localhost:8000',u'localhost', u'localhost:5000', u'http://127.0.0.1:5000/']
+ALLOWED_HOSTS = [u'tntwebserver.herokuapp.com', u'tntbankapp.herokuapp.com',u'127.0.0.1', u'localhost:8000',u'localhost', u'localhost:5000', u'http://127.0.0.1:5000/']
 
 
 # Application definition
