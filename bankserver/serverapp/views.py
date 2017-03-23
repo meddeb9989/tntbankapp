@@ -23,6 +23,7 @@ from bankserver.serverapp.djangoemail import DjangoEmail
 from django.shortcuts import render
 from django.template.loader import get_template
 from rest_framework.response import Response
+from webserver.serverapp.transactionshash import TransctionHash
 import random
 import hashlib
 
@@ -63,8 +64,13 @@ class JSONResponse(HttpResponse):
 @api_view(['POST','GET'])
 def bank_transaction(request):
     if request.user.is_authenticated():
-        date = datetime.datetime.now()
-        data = [{'valid' : True}]
+        transactionhash = TransctionHash()
+        for data in request.data:
+            for key, value in data.items():
+                key1 = transactionhash.decrypt(key, "fakher")
+                value1 = transactionhash.decrypt(value, "fakher")
+                data.append({key1: value1})
+        data.append({'valid' : True}])
         print "Transaction Sent"
     else:
         print "Transaction not sent"
