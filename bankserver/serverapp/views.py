@@ -23,7 +23,7 @@ from bankserver.serverapp.djangoemail import DjangoEmail
 from django.shortcuts import render
 from django.template.loader import get_template
 from rest_framework.response import Response
-from webserver.serverapp.transactionshash import TransctionHash
+from bankserver.serverapp.transactionshash import TransctionHash
 import random
 import hashlib
 
